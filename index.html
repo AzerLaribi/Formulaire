@@ -107,8 +107,8 @@ input[type=text]:focus {
 </head>
 
 <body>
-	<script   type="text/javascript" language="javascript">
-	    alert("Bonjour");
+	<script type="text/javascript" language="javascript">
+			    alert("Bonjour");
 	    function surligne(champ, erreur){
             if(erreur)
               champ.style.backgroundColor = "#fba";
@@ -157,90 +157,149 @@ input[type=text]:focus {
         function Valid(){
         	if (verifPseudo() && verifAge() && verifMail()){
         		alert('Validé');
-			document.getElementById("age").value="";
+        		document.getElementById("age").value="";
         		document.getElementById("name").value="" ;
-                        document.getElementById("mail").value="" ;
+                document.getElementById("mail").value="" ;
         		return true;
-        	}
+        		
+        		        	}
         	else{
         		alert('Veuillez remplir correctement tous les champs');
         		return false;
     
         }
-	}
-</script>
+       }
+       function KeepCountglace() {
+
+        var NewCount = 0
+
+        if (document.glace.Chocolat.checked) { NewCount = NewCount + 1 }
+
+        if (document.glace.Vanille.checked) { NewCount = NewCount + 1 }
+
+        if (document.glace.Fraise.checked) { NewCount = NewCount + 1 }
+
+        if (document.glace.Pistache.checked) { NewCount = NewCount + 1 }
+
+
+        if (NewCount == 4) {
+            alert('Pick Just Two Please')
+            document.glace; return false;
+        }
+    }
+    function KeepCountfilm() {
+    	            var NewCount = 0
+            
+            if (document.movie.mystic.checked)
+            {NewCount = NewCount + 1}
+            
+            if (document.movie.rocky.checked)
+            {NewCount = NewCount + 1}
+            
+            if (document.movie.extraterrestre.checked)
+            {NewCount = NewCount + 1}
+            
+            if (document.movie.thelma.checked)
+            {NewCount = NewCount + 1}
+            
+            
+            if (NewCount == 3)
+            {
+            alert('Pick Just Two  Please')
+            document.amine; return false;
+            }
+    }
+    
+    function KeepCountville() {
+
+        var NewCount = 0
+
+        if (document.Ville.Paris.checked) { NewCount = NewCount + 1 }
+
+        if (document.Ville.Nantes.checked) { NewCount = NewCount + 1 }
+
+        if (document.Ville.Lille.checked) { NewCount = NewCount + 1 }
+
+        if (document.Ville.Marseille.checked) { NewCount = NewCount + 1 }
+
+
+        if (NewCount == 3) {
+            alert('Pick Just Two Please')
+            document.ville; return false;
+        }
+    }
+       
+
+       
+        
+        
+	</script>
 	
 	<header><p><h1>Formulaire</h1></p></header>
 	<div id="EX4">
-		<input id="name" type="text" name="Psedo" placeholder="Psedo" maxlength ="25" minlength="2"><br>
-		<input id="mail" type="text" name="E-mail" placeholder="Vous@example.com" pattern=".+@[a-z 0-9._-]{2,}\.[a-z]{2,4}$/"><br>
-		<input id="age" type="text" name="Age" placeholder="Age" name="age" max ="111" min="5"><br>
+		<input id="name" type="text" name="Psedo" placeholder="Psedo"><br>
+		<input id="mail" type="text" name="E-mail" placeholder="Vous@example.com" ><br>
+		<input id="age" type="text" name="Age" placeholder="Age" name="age"><br>
 		<button onclick="Valid()">Envoyer</button>
 	</div>
 	<div id="glace">
 		<p>Quelle est votre glace préférée?</p>
 
 <div>
-  <input type="radio" value="Chocolat">
+  <input type="radio" name="glace" value="Chocolat">
   <label for="Chocolat">Chocolat</label>
 </div>
 
 <div>
-  <input type="radio" value="Fraise">
+  <input  type="radio" name="glace" value="Fraise">
   <label for="Fraise">Fraise</label>
 </div>
 
 <div>
-  <input type="radio" value="Pistache">
+  <input  type="radio" name="glace" value="Pistache">
   <label for="Pistache">Pistache</label>
 </div>
 <div>
-  <input type="radio" value="Vanille">
+  <input  type="radio" name="glace" value="Vanille">
   <label for="Vanille">Vanille</label>
 </div>
 
 	</div>
 <div id="Films">
-	<p>Quelle Sont vos 2 ou 3 Films préférés</p>
-
-<div >
-  <input type="checkbox" value="Chocolat">
-  <label for="Chocolat">Mystic River</label>
-</div>
-
-<div >
-  <input type="checkbox" value="Rocky">
-  <label for="Rocky">Rocky</label>
-</div>
-
-<div>
-  <input type="checkbox" value="E.T.l'extraterrestre">
-  <label for="E.T.l'extraterrestre">E.T.l'extraterrestre</label>
-</div>
-<div>
-  <input type="checkbox" value="Thelma et Louise">
-  <label for="Thelma et Louise">Thelma et Louise</label>
-</div>
+	    <FORM NAME="movie">
+        <p>QUELLE sont 2 et 3 film preferes</p>
+        
+        <br><INPUT TYPE="checkbox" NAME="mystic"
+        onClick="return KeepCountfilm()"> mystic
+        
+        <br><INPUT TYPE="checkbox" NAME="rocky"
+        onClick="return KeepCountfilm()"> rocky
+        
+        <br><INPUT TYPE="checkbox" NAME="extraterrestre"
+        onClick="return KeepCountfilm()"> extraterrestre
+        
+        <br><INPUT TYPE="checkbox" NAME="thelma"
+        onClick="return KeepCountfilm()"> thelma</br></FORM>
 </div>
 <div id="Ville">
 	<p>Quelle est votre ville préférée?</p>
 
 <div>
-  <input type="radio" value="Lille">
+  <input  type="radio" name="ville" value="Lille">
   <label for="Lille">Lille</label>
 </div>
 
 <div>
-  <input type="radio" value="Paris">
+  <input  type="radio" name="ville" value="Paris">
   <label for="Paris">Paris</label>
 </div>
 
 <div>
-  <input type="radio" value="Nantes">
+  <input  type="radio" name="ville" value="Nantes">
   <label for="Nantes">Nantes</label>
 </div>
 <div>
-  <input type="radio" value="Marseille">
+  <input  type="radio" name="ville" value="Marseille">
   <label for="Marseille">Marseille</label>
 </div>
 

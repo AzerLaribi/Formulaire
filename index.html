@@ -157,6 +157,9 @@ input[type=text]:focus {
         function Valid(){
         	if (verifPseudo() && verifAge() && verifMail()){
         		alert('Validé');
+			document.getElementById("age").value="";
+        		document.getElementById("name").value="" ;
+                        document.getElementById("mail").value="" ;
         		return true;
         	}
         	else{
@@ -164,6 +167,7 @@ input[type=text]:focus {
         		return false;
     
         }
+	}
 </script>
 	
 	<header><p><h1>Formulaire</h1></p></header>

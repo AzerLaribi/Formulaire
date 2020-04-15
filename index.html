@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercice4</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		header{
+	text-align: center;
+	background-color: #173F73;
+	color: #C7CCD9;
+}
+*{
+	margin: 0px;
+	padding: 0px
+}
+body{
+	background-color: #95B4DD;
+}
+#glace,#Ville,#Films{
+	margin: 20px;
+	border-radius: 8px;
+	background-color: #4183DE;
+	color: 
+	font-size: 1.2em;
+	width: 50%;
+
+
+}
+#glace:hover{
+	background-color: #19A6EC;
+	border-radius:8px;
+	border: 1px solid #196C86;
+}
+#Ville:hover{
+	background-color: #3BC0C2;
+	border-radius:8px;
+	border: 1px solid #19E9EC;
+}
+#Films:hover{
+	background-color: #69BCD6;
+	border-radius:8px;
+	border: 1px solid #344F6E;
+}
+#glace p,#Ville p,#Films p{
+	text-align: center;
+	font-size: 1.4em
+}
+input:hover{
+	background-color: gold;
+	border-radius: 8px;
+	border:1px solid ;
+}
+input{
+	margin-left: 10px;
+	margin-bottom: 10px
+}
+input[type=text] {
+    border: 1px solid #344F6E;
+    border-radius: 5px; 
+    background-color: #437090;
+    color: white;
+    padding: 5px 20px;
+    margin: 5px 5px;
+    opacity: .8;
+    margin-left: 10px;
+}
+input[type=text]:focus {
+      border: 2px solid #344F6E;
+      background-color: #5279A4;
+  }
+  input[type=text]:hover{
+  	background-color: #65909E;
+  	border:2px solid #0D313D;
+  }
+  button {
+  background-color: #437090;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-decoration: none;
+  margin: 10px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #344F6E;
+
+  }
+  button:hover{
+  	background-color: #65909E;
+  	border:2px solid #0D313D;
+  }
+  #EX4{
+  	background-color: #699CD6;
+  	width: 20%;
+  	margin: 10px;
+  	border-radius: 8px;
+  	border:1px solid #344F6E;
+  }
+  #EX4:hover{
+  	border:3px solid #344F6E;
+
+  }
+
+
+	</style>
+
+
+</head>
+
+<body>
+	<script   type="text/javascript" language="javascript">
+	    alert("Bonjour");
+	    function surligne(champ, erreur){
+            if(erreur)
+              champ.style.backgroundColor = "#fba";
+            else
+              champ.style.backgroundColor = "";
+        }
+	    function verifPseudo(){
+	    	var d = document.getElementById("name");
+            if(d.value.length < 2 || d.value.length > 25){
+               surligne(d, true);
+               return false;
+            }
+            else{
+               surligne(d, false);
+               return true;
+            }
+        }
+        function verifMail(){
+        	var d = document.getElementById("mail");
+            var regex = /^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/;
+            if(!regex.test(d.value))
+            {
+               surligne(d, true);
+               return false;
+            }
+            else
+            {
+               surligne(d, false);
+               return true;
+            }
+        }
+        function verifAge(){
+        	var d = document.getElementById("age")
+            var age = parseInt(d.value);
+            if(isNaN(age) || age < 5 || age > 111)
+            {
+               surligne(d, true);
+               return false;
+            }
+            else
+            {
+               surligne(d, false);
+               return true;
+            }
+        }
+        function Valid(){
+        	if (verifPseudo() && verifAge() && verifMail()){
+        		alert('Validé');
+        		return true;
+        	}
+        	else{
+        		alert('Veuillez remplir correctement tous les champs');
+        		return false;
+    
+        }
+</script>
+	
+	<header><p><h1>Formulaire</h1></p></header>
+	<div id="EX4">
+		<input id="name" type="text" name="Psedo" placeholder="Psedo" maxlength ="25" minlength="2"><br>
+		<input id="mail" type="text" name="E-mail" placeholder="Vous@example.com" pattern=".+@[a-z 0-9._-]{2,}\.[a-z]{2,4}$/"><br>
+		<input id="age" type="text" name="Age" placeholder="Age" name="age" max ="111" min="5"><br>
+		<button onclick="Valid()">Envoyer</button>
+	</div>
+	<div id="glace">
+		<p>Quelle est votre glace préférée?</p>
+
+<div>
+  <input type="radio" value="Chocolat">
+  <label for="Chocolat">Chocolat</label>
+</div>
+
+<div>
+  <input type="radio" value="Fraise">
+  <label for="Fraise">Fraise</label>
+</div>
+
+<div>
+  <input type="radio" value="Pistache">
+  <label for="Pistache">Pistache</label>
+</div>
+<div>
+  <input type="radio" value="Vanille">
+  <label for="Vanille">Vanille</label>
+</div>
+
+	</div>
+<div id="Films">
+	<p>Quelle Sont vos 2 ou 3 Films préférés</p>
+
+<div >
+  <input type="checkbox" value="Chocolat">
+  <label for="Chocolat">Mystic River</label>
+</div>
+
+<div >
+  <input type="checkbox" value="Rocky">
+  <label for="Rocky">Rocky</label>
+</div>
+
+<div>
+  <input type="checkbox" value="E.T.l'extraterrestre">
+  <label for="E.T.l'extraterrestre">E.T.l'extraterrestre</label>
+</div>
+<div>
+  <input type="checkbox" value="Thelma et Louise">
+  <label for="Thelma et Louise">Thelma et Louise</label>
+</div>
+</div>
+<div id="Ville">
+	<p>Quelle est votre ville préférée?</p>
+
+<div>
+  <input type="radio" value="Lille">
+  <label for="Lille">Lille</label>
+</div>
+
+<div>
+  <input type="radio" value="Paris">
+  <label for="Paris">Paris</label>
+</div>
+
+<div>
+  <input type="radio" value="Nantes">
+  <label for="Nantes">Nantes</label>
+</div>
+<div>
+  <input type="radio" value="Marseille">
+  <label for="Marseille">Marseille</label>
+</div>
+
+	</div>
+</div>
+
+</body>
+</html>
